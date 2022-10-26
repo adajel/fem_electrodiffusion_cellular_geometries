@@ -31,20 +31,26 @@ Running the code
 ------------------------------------------------------------------------------
 To run all the numerical experiments, execute:
 
+```python
 $ python3 main.py
+```
 
 All meshes are generates automatically in the code where they are used, if they
 do not already exist. Each numerical experiments can be run by the run_*.py
 files, i.e. to run the method of manufactured solutions test, execute:
 
+```python
 $ python3 run_MMM_test.py
+```
 
 ------------------------------------------------------------------------------
 Generate figures
 ------------------------------------------------------------------------------
 To generate the figures (.svg format) presented in the paper, execute:
 
+```python
 $ python3 make_figures.py
+```
 
 ------------------------------------------------------------------------------
 Files
