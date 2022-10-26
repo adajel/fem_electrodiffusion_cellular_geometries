@@ -22,8 +22,8 @@ the docker container by running:
 
 
 ```bash
-docker pull ghcr.io/adajel/fem_electrodiffusion_cellular_geometries:v0.1.1
-docker run --rm -v $PWD:/home/shared -w /home/shared  -it ghcr.io/adajel/fem_electrodiffusion_cellular_geometries:v0.1.1
+$ docker pull ghcr.io/adajel/fem_electrodiffusion_cellular_geometries:v0.1.1
+$ docker run --rm -v $PWD:/home/shared -w /home/shared  -it ghcr.io/adajel/fem_electrodiffusion_cellular_geometries:v0.1.1
 ```
 
 ------------------------------------------------------------------------------
