@@ -69,13 +69,3 @@ $ python3 make_figures.py
 ```bash
 $ convert.sh
 ```
-
-------------------------------------------------------------------------------
-Files
-------------------------------------------------------------------------------
-solver.py: Contains class for a FEM solver for the KNP-EMI problem
-
-solver_emi.py: Contains class for a FEM solver for the EMI problem
-
-utils.py: Contains class for setting up exact solutions, boundary terms, source terms
-    and initial conditions for the method of manufactured solutions (MMS) test.
