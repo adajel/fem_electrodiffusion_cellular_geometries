@@ -8,8 +8,11 @@ _________________
 ------------------------------------------------------------------------------
 Project description
 ------------------------------------------------------------------------------
-This directory contains an implementation of a Mortar element FEM method
-for the solving the KNP-EMI model and the EMI model.
+This directory contains an implementation of a mortar element FEM method for
+the solving the KNP-EMI model and the EMI model, and code for reproducing
+results from Ellingsrud, Ada J., et al. "Finite element simulation of ionic
+electrodiffusion in cellular geometries." Frontiers in Neuroinformatics 14
+(2020): 11.
 
 ------------------------------------------------------------------------------
 Dependencies
@@ -17,10 +20,8 @@ Dependencies
 To get the environment needed (all dependencies etc.) to run the code, download
 the docker container by running:
 
-docker run -t -v $(pwd):/home/fenics -i ceciledc/fenics_mixed_dimensional:13-03-20
-
-All meshes are generates automatically in the code where they are used, if they
-do not already exist.
+docker pull ghcr.io/adajel/fem_electrodiffusion_cellular_geometries:v0.1.1
+docker run --rm -v $PWD:/home/shared -w /home/shared  -it ghcr.io/adajel/fem_electrodiffusion_cellular_geometries:v0.1.1
 
 ------------------------------------------------------------------------------
 Running the code
@@ -29,8 +30,9 @@ To run all the numerical experiments, execute:
 
 $ python3 main.py
 
-Each numerical experiments can be run by the run_*.py files, i.e. to run the
-method of manufactured solutions test, execute:
+All meshes are generates automatically in the code where they are used, if they
+do not already exist. Each numerical experiments can be run by the run_*.py
+files, i.e. to run the method of manufactured solutions test, execute:
 
 $ python3 run_MMM_test.py
 
@@ -45,7 +47,7 @@ $ python3 make_figures.py
 Files
 ------------------------------------------------------------------------------
 main.py:
-    Script for running all simulations presented in paper, that is:
+    Script for running all simulations presented in the paper, that is:
     - run_refinement_test.py
     - run_test_MMS.py
     - run_2D_axonspy
