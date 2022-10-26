@@ -1,0 +1,44 @@
+[build-system] # Require setuptool version due to https://github.com/pypa/setuptools/issues/2938
+requires = ["setuptools>=61.0.0", "wheel"]
+
+[project]
+name = "fem_electrodiffusion_cellular_geometries"
+version = "0.1.0"
+description = "Tools ensuring reproducible and standarized Python packaging."
+authors = [{name = "Ada Johanne Ellingsrud", email = "ada@simula.no"}]
+license = {file = "LICENSE"}
+readme = "README.md"
+
+[project.scripts]
+fem_electrodiffusion_cellular_geometries = "fem_electrodiffusion_cellular_geometries.cli:main"
+
+[project.optional-dependencies]
+test = [
+]
+linting = [
+    "mypy",
+    "flake8",
+]
+docs = [
+   "jupyter-book",
+   "jupytext",
+]
+all = [
+   "fem_electrodiffusion_cellular_geometries[test]",
+   "fem_electrodiffusion_cellular_geometries[linting]",
+   "fem_electrodiffusion_cellular_geometries[docs]"
+]
+
+
+[tool.mypy]
+ignore_missing_imports = true
+# Folders to exclude
+exclude = [
+    "docs/",
+    "build/"
+]
+# Folder to check with mypy
+files = [ 
+    "src",
+    "tests"
+]
